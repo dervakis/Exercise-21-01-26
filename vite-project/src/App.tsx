@@ -62,6 +62,13 @@ function App() {
       SetItems(product);
     }
   }
+  const handleSerch = async (q:string)=>{
+    let data = await fetchData(`https://dummyjson.com/products/search?q=${q}`)
+    if ('products' in data) {
+      const product = data.products as Item[];
+      SetItems(product);
+    }
+  }
 
   const tiles: Tile[] = [
     { id: 1, heading: 'All Product', value: items.length },
@@ -70,7 +77,7 @@ function App() {
   ];
   return (
     <>
-      <Navbar />
+      <Navbar handleSearch={handleSerch}/>
       {loading && <Loader/>}
       <div className='flex'>
 

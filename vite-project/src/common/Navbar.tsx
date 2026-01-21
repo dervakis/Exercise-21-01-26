@@ -12,6 +12,7 @@ function Navbar() {
                     <div className="flex space-x-4">
                         <a aria-current="page" className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">Dashboard</a>
                         <a className="rounded-md px-3 py-2 text-sm font-medium text-gray-300">About Us</a>
+                        
                     </div>
                 </div>
             </div>

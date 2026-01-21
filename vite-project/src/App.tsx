@@ -1,4 +1,4 @@
-import { useEffect, useState, type MouseEventHandler } from 'react'
+import { useContext, useEffect, useState, type MouseEventHandler } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -8,6 +8,7 @@ import { useForm, type SubmitErrorHandler, type SubmitHandler } from 'react-hook
 import Form from './common/Form'
 import { Siren, Tag } from 'lucide-react'
 import Tiles from './common/Tiles'
+import { UserContext, type Mode } from './context/UserContext'
 
 type Item = {
   id: number,
@@ -29,6 +30,7 @@ type Tile = {
 function App() {
   const [items, SetItems] = useState<Item[]>([]);
   const [errors, setErrors] = useState<Object>();
+  // const {name, mod, setMode}=useContext(UserContext)
 
 
   useEffect(() => {

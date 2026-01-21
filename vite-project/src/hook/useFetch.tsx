@@ -9,9 +9,9 @@ function useFetch() {
         setLoading(true);
         try {
             const ret = await fetch(url);
-            console.log(url)
+            // console.log(url)
             const res = await ret.json();
-            console.log(res)
+            // console.log(res)
             if (!ret.ok)
                 throw new Error('Return Bad');
             return res;

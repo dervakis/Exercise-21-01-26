@@ -1,4 +1,5 @@
-import React, { type ReactNode } from 'react'
+import React, { useContext, useState, type ReactNode } from 'react'
+import { UserContext } from '../context/UserContext'
 
 interface PropType {
     children?: ReactNode,
@@ -9,8 +10,9 @@ interface PropType {
     quantity: number
 }
 function Card({ image, title, price = 0, details, quantity, children }: PropType) {
+    const {mod} = useContext(UserContext);
     return (
-        <div className='relative w-full sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl bg-teal-200 shadow-lg rounded'>
+        <div className={`relative w-full sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl ${mod ? 'bg-gray-300' : 'bg-teal-200'} shadow-lg rounded`}>
             <div className='h-50'>
                 <img className='w-full h-full' src={"/image.png"} alt="Sunset in the mountains" />
             </div>
